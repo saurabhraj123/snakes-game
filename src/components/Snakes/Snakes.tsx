@@ -93,7 +93,8 @@ const Snakes = () => {
             y: Math.floor(Math.random() * containerRect.height),
           });
           setScore((prevScore) => prevScore + speed * 10);
-          setSpeed((prevSpeed) => prevSpeed + 1);
+
+          if (speed < 3) setSpeed((prevSpeed) => prevSpeed + 1);
         } else {
           newSnakeLocations.pop();
         }
